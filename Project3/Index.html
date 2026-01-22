@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBSITE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      display: flex;
+      height: 50px;
+      background-color: black;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: medium;
+      padding: 0 20px;
+    }
+
+    #Website_div {
+      display: flex;
+      gap: 15px; /* spacing between links */
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: orange;
+    }
+    /* Profiles section */
+.profiles {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px;
+}
+
+.profile {
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 15px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #333;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 15px;
+}
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.online {
+  background: #4CAF50;
+  color: white;
+}
+
+.offline {
+  background: #f44336;
+  color: white;
+}
+
+.role {
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.profile p {
+  margin: 8px 0;
+}
+
+.profile button {
+  background: #333;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.profile button:hover {
+  background: #ff9800;
+}
+
+/* Help button */
+.help-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.help-btn:hover {
+  background: #d32f2f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profiles {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+    
+
+
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div>
+      <a href="#">MyWebsite</a>
+    </div>
+    <div id="Website_div">
+      <a href="#">Home | About | Contact</a>
+     
+   
+    </div>
+  </nav>
+<section class="profiles">
+    <div class="profile">
+      <div class="avatar">R</div>
+      <h2>Rahul</h2>
+      <span class="status online">ONLINE</span>
+      <p class="role">Web Developer</p>
+      <p>Builds modern websites using HTML & CSS.</p>
+      <button>View Profile</button>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">N</div>
+      <h2>Neha</h2>
+      <span class="status offline">OFFLINE</span>
+      <p class="role">UI Designer</p>
+      <p>Designs clean and user-friendly interfaces.</p>
+      <button>View Profile</button>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">A</div>
+      <h2>Aman</h2>
+      <span class="status online">ONLINE</span>
+      <p class="role">Backend Developer</p>
+      <p>Works with server logic and databases.</p>
+      <button>View Profile</button>
+    </div>
+  </section>
+
+  <!-- Help Button -->
+  <button class="help-btn">Help</button>
+
+
+</body>
+</html>

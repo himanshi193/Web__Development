@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Properties</title>
+
+    <style>
+   
+   .parent{
+
+      border:3px solid black;
+
+      height: 700px;
+
+      display: grid;                                      /*enables grid layout on the container */
+
+      grid-template-columns: 200px 200px 200px;          /* Defines columns size*/
+
+      grid-template-rows: 200px 200px 200px;            /* Defines rows size*/
+
+       grid-column-start: 1;                            /*Defines column start and end;*/
+
+       grid-column-end: 3; 
+
+       grid-row-start: 1;                               /*Defines row start and end;*/
+
+       grid-row-end: 2;
+
+
+   }
+
+   .child{
+
+    
+     border: 1px solid black;
+
+
+   }
+
+   #one{
+
+       background-color: aquamarine;
+   }
+
+   #two{
+
+       background-color: cadetblue;
+
+   }
+
+   #three{
+
+         background-color: plum;
+
+   }
+
+   #four{
+
+          background-color: rgb(38, 38, 176);
+   }
+
+   #five{
+
+          background-color: lightsalmon;
+
+   }
+
+   #six{
+
+           background-color: chocolate;
+
+   }
+
+   #seven{
+
+          background-color: cornflowerblue;
+   }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="parent">
+    <div class="child" id="one">1</div>
+    <div class="child" id="two">2</div>
+    <div class="child" id="three">3</div>
+    <div class="child" id="four">4</div>
+    <div class="child" id="five">5</div>
+    <div class="child" id="six">6</div>
+    <div class="child" id="seven">7</div>
+    <div class="child" id="eight">8</div>
+    <div class="child" id="nine">9</div>
+    <div class="child" id="ten">10</div>
+
+
+
+
+    </div>
+</body>
+</html>

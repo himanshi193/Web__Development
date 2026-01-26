@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations Properties</title>
+    <style>
+
+        body{
+            background-color: rgb(15,15,14);
+        }
+
+         #ball{
+
+            height: 200px;
+             width:200px;
+             background:linear-gradient(rgb(210, 229, 68),white);
+             border-radius: 50%;
+             border: 4px solid white;
+             transition:3s;
+             margin:10px auto;
+              animation-name: bounce;                             /*name of the @keyframes to run*/ 
+             animation-duration: 900ms;                           /*how long one animation cycle takes place*/
+             animation-timing-function: ease-in;                 /*control speed changes during the animation.  ease in : starts slow , end fast */
+             animation-iteration-count: infinite;                /* how many times animation runs , infinte: run forever*/
+             animation-direction:alternate;                      /*controls direction of animation playback : alternate= 1run-> forward :2nd run->backward*/
+
+        }
+
+        @keyframes bounce {          
+            0%{                                 
+                transform: translateY(0px);                     /* balls at original position*/
+            }
+            100%{
+                transform:translateY(85vh)rotate(360deg);       /* moves 85% of viewport height: rotates one full circle . its work is basically moves and rotates the element*/
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ball"></div>
+
+</body>
+</html>

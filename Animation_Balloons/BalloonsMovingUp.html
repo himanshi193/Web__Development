@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloons moving up</title>
+    <style>
+    .sky {
+  position: relative;
+  height: 100vh;
+  background: skyblue;
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;   /* neeche se start */
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  animation: flyUp 6s linear infinite;
+}
+
+.red { background: red; left: 20%; animation-duration: 5s; }
+.blue { background: blue; left: 50%; animation-duration: 7s; }
+.yellow { background: yellow; left: 75%; animation-duration: 6s; }
+
+@keyframes flyUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120vh); /* sirf upar */
+  }
+}
+</style>
+</head>
+<body>
+    <div class="sky">
+  <div class="balloon red"></div>
+  <div class="balloon blue"></div>
+  <div class="balloon yellow"></div>
+</div>
+    
+</body>
+</html>

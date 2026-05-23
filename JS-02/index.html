@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive</title>
+</head>
+<body>
+    <script>
+
+ //     =======================================================================
+// LECTURE 2 - JavaScript Deep Dive
+// Topics: if/else | Non-Primitive Types (Array, Object, Function)
+//               | Execution Context (Call Stack, GEC, FEC)
+// ============================================================================
+
+
+//__________________________________________________________
+
+// 1. CONDITIONALS - if / else if / else
+
+//___________________________________________________________
+
+// Basic if-else
+
+let age=18;
+if (age >=18){
+
+    console.log("Adult hai -Can vote");
+}
+else{
+    console.log("Minor hai - Cannot vote");
+}
+
+// if - else if - else (multiple conditions)
+
+let marks = 75;
+
+if (marks >=90) {
+    console.log("Grade: A+");
+}
+else if (marks >=75) {
+    console.log("Grade: A");
+}
+else if (marks >=60) {
+    console.log("Grade: B");
+}
+else if(marks>=40){
+    console.log("Grade: C");
+}
+else{
+    console.log("Grade: Fail");
+}
+
+//Nested if-else
+
+let isLoggedIn = true;
+let isAdmin = false;
+ 
+if(isLoggedIn){
+    if (isAdmin) {
+        console.log("Admin Dashboard");
+    }
+    else{
+        console.log("User Dashboard");
+    }
+}
+else{
+    console.log("Please Login First");
+}
+
+// Ternary Operator - if else ka short form
+
+// syntax : condition? valueIfTrue : valueIfFalse
+
+let num=10;
+let result=num%2 === 0?"Even" :"Odd";
+
+console.log(result); //Even
+
+
+
+// Switch Statement -ek value pe multiple cases check krna
+
+let day="Monday";
+
+switch(day) {
+    case "Monday":
+
+    console.log("week ka 1st day");
+    break;
+
+    case "Friday":
+    console.log("Weekend hai !");
+    break;
+
+    default:
+        console.log("Normak weekday");
+}
+
+// ─────────────────────────────────────────────
+//  2. NON-PRIMITIVE DATA TYPES
+//  (Reference Types — Memory mein heap pe store hote hain)
+// ─────────────────────────────────────────────
+
+/*
+  Primitive   → Stack mein store hota hai (value copy hoti hai)
+  Non-Primitive → Heap mein store hota hai (reference/address copy hoti hai)
+
+  Non-Primitive types:
+    1. Object
+    2. Array
+    3. Function
+*/
+
+
+// ─────────────────────────────────────────────
+//  2A. OBJECT
+// ─────────────────────────────────────────────
+
+let person = {
+  name: "Ankit",
+  age: 22,
+  isStudent: true,
+  address: {            // Nested Object
+    city: "Indore",
+    state: "MP"
+  }
+};
+
+// Property Access — 2 tarike
+console.log(person.name);           // Dot notation → "Ankit"
+console.log(person["age"]);         // Bracket notation → 22
+console.log(person.address.city);   // Nested access → "Indore"
+
+// Property add karna
+person.email = "ankit@gmail.com";
+console.log(person.email);  // "ankit@gmail.com"
+
+// Property update karna
+person.age = 23;
+console.log(person.age);    // 23
+
+// Property delete karna
+delete person.isStudent;
+console.log(person.isStudent); // undefined
+
+// Property check karna
+console.log("name" in person);   // true
+console.log("salary" in person); // false
+
+// Object methods (functions inside object)
+let calculator = {
+  num1: 10,
+  num2: 5,
+  add: function() {
+    return this.num1 + this.num2;  // 'this' = current object
+  },
+  subtract() {    // Shorthand method syntax
+    return this.num1 - this.num2;
+  }
+};
+console.log(calculator.add());       // 15
+console.log(calculator.subtract());  // 5
+
+// Object loop — for...in
+for (let key in person) {
+  console.log(key, ":", person[key]);
+}
+
+// Reference trap — direct assign karne pe same object point hota hai!
+let obj1 = { val: 10 };
+let obj2 = obj1;         // obj2 same object ko point kar raha hai
+obj2.val = 99;
+console.log(obj1.val);   // 99 ← obj1 bhi change ho gaya! (reference copy)
+
+// Spread Operator — shallow copy banana
+let original = { x: 1, y: 2 };
+let copy = { ...original };
+copy.x = 99;
+console.log(original.x); // 1 — original safe hai
+console.log(copy.x);     // 99
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
